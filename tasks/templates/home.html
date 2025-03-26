@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0" />
+    <title>Structure of HTML Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Welcome to the task management system!</h1>
+    <div>
+        <a href='{% url "manager-dashboard" %}' class="px-2 py-1 bg-green-500">Go to manager-task</a></br>
+        {% comment %} <a href='{% url "user-dashboard" %}' class="px-2 py-1 bg-green-500">Go to user-task</a></br> {% endcomment %}
+        <a href='{% url "create-task" %}' class="px-2 py-1 bg-green-500">Go to create-task</a></br>
+    </div>
+</body>
+
+</html>
