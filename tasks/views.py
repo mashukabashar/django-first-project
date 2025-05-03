@@ -126,3 +126,4 @@ def view_task(request):
 
 def home(request):
     return render(request, "home.html")
+
