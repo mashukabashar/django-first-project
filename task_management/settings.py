@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url
+# import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-b3=w=m+=b=fga^&9+98ohh%-@gqrvtjh2=hve9h$b27*jdptj3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS=['https://*.onrender.com','http://127.0.0.1:8000/']
+ALLOWED_HOSTS = []
+# CSRF_TRUSTED_ORIGINS=['https://*.onrender.com','http://127.0.0.1:8000/']
 
 
 # Application definition
@@ -92,26 +92,26 @@ WSGI_APPLICATION = 'task_management.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'task-management',
-#         'USER': 'postgres',
-#         'PASSWORD': '123456',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'task-management',
+        'USER': 'postgres',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
 
 # Database documentation https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://task_manager_db_9l9z_user:qln2nxBkOVlE4uW3pmH9YhWidbw1jwEU@dpg-d0ar0geuk2gs73c3ctk0-a.oregon-postgres.render.com/task_manager_db_9l9z',
-        conn_max_age=600
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Replace this value with your local database's connection string.
+#         default='postgresql://task_manager_db_9l9z_user:qln2nxBkOVlE4uW3pmH9YhWidbw1jwEU@dpg-d0ar0geuk2gs73c3ctk0-a.oregon-postgres.render.com/task_manager_db_9l9z',
+#         conn_max_age=600
+#     )
+# }
 
 
 # Password validation
