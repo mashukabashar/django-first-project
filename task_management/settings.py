@@ -95,26 +95,26 @@ WSGI_APPLICATION = 'task_management.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'task-management',
-#         'USER': 'postgres',
-#         'PASSWORD': '123456',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'task-management',
+        'USER': 'postgres',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
 
 # Database documentation https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://task_manager_db_fofw_user:jhCQlQIof0OvC4GaOi7cZNK7KSYcpMBt@dpg-d0b10f15pdvs73c8d6e0-a.oregon-postgres.render.com/task_manager_db_fofw',
-        conn_max_age=600
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Replace this value with your local database's connection string.
+#         default='postgresql://task_manager_db_fofw_user:jhCQlQIof0OvC4GaOi7cZNK7KSYcpMBt@dpg-d0b10f15pdvs73c8d6e0-a.oregon-postgres.render.com/task_manager_db_fofw',
+#         conn_max_age=600
+#     )
+# }
 
 
 # Password validation
