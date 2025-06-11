@@ -17,7 +17,7 @@ class Task(models.Model):
     project = models.ForeignKey(
         "Project",
         on_delete=models.CASCADE,
-        default=1
+        default=1, related_name="task_under_project"
     )
     assigned_to = models.ManyToManyField(Employee, related_name='tasks')
     title = models.CharField(max_length=250)
@@ -47,7 +47,6 @@ class TaskDetail(models.Model):
         on_delete=models.CASCADE,
         related_name='details'
     )
-    assigned_to = models.ManyToManyField(Employee)  # ManyToManyField for employees
     priority = models.CharField(
         max_length=1, choices=PRIORITY_OPTIONS, default=LOW)
     notes = models.TextField(blank=True, null=True)
