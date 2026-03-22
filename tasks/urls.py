@@ -9,3 +9,6 @@ urlpatterns = [
 
     path('user-dashboard/', user_dashboard, name="user-dashboard")
 ]
+
+
+# source task_env/bin/activate
