@@ -16,6 +16,31 @@
         {% comment %} <a href='{% url "user-dashboard" %}' class="px-2 py-1 bg-green-500">Go to user-task</a></br> {% endcomment %}
         <a href='{% url "create-task" %}' class="px-2 py-1 bg-green-500">Go to create-task</a></br>
     </div>
+
+    <div>
+
+    {% if user.is_authenticated %}
+    {{user}}
+    <form action="{% url 'logout' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">logout</button>
+    </form>
+    {% else %}
+    Annonymous
+    {% endif %}
+
+    </div>
+
 </body>
 
 </html>
+
+
+
+
+
+
+
+    
+    
+

@@ -124,6 +124,3 @@ def view_task(request):
     return render(request, "show_task.html", {"projects": projects})
 
 
-def home(request):
-    return render(request, "home.html")
-
