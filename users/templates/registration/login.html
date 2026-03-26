@@ -8,6 +8,19 @@
 <body>
     <h1>Welcome to Authentication System</h1>
     <div>
+
+        {% if messages %}
+        {% for message in messages %}
+            <div class="px-2 py-1 {% if message.tags == 'success' %}bg-green-500{% endif %} ">{{message}}</div>
+        {% endfor %}
+        {% endif %}
+
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+            <p class="text-red-500 text-sm">{{ error }}</p>
+        {% endfor %}
+        {% endif %}
+
         <form method='POST'>
             {% csrf_token %}
             <input type="text" placeholder="Enter your username" name="username">
@@ -17,3 +30,4 @@
     </div>
 </body>
 </html>
+
