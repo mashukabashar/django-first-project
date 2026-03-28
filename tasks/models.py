@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.signals import post_save, pre_save, m2m_changed, post_delete
 from django.dispatch import receiver
 from django.core.mail import send_mail
+from django.contrib.auth.models import User
 
 class Employee(models.Model):
     name = models.CharField(max_length=100)
@@ -22,13 +23,12 @@ class Task(models.Model):
         on_delete=models.CASCADE,
         default=1, related_name="task_under_project"
     )
-    assigned_to = models.ManyToManyField(Employee, related_name='tasks')
+    assigned_to = models.ManyToManyField(User, related_name='tasks')
     title = models.CharField(max_length=250)
     description = models.TextField()
     due_date = models.DateField()
     status = models.CharField(
         max_length=15, choices=STATUS_CHOICES, default="PENDING")
-    is_completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -65,3 +65,4 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
