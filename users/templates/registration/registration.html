@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+{% extends "base.html" %}
 
-<body class="bg-gray-100">
-
-    <h1 class="text-xl font-bold text-center mt-6">
-        Welcome to Authentication System
-    </h1>
+{% block content %}
 
     <div class="max-w-md mx-auto bg-white p-4 mt-6 rounded shadow">
 
@@ -50,5 +39,4 @@
 
     </div>
 
-</body>
-</html>
+{% endblock content %}
