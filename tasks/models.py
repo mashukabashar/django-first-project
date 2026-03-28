@@ -50,6 +50,7 @@ class TaskDetail(models.Model):
         on_delete=models.DO_NOTHING,
         related_name='details'
     )
+    asset=models.ImageField(upload_to='task_asset', blank=True, null=True, default='task_asset/No_Image_Available.jpg')
     priority = models.CharField(
         max_length=1, choices=PRIORITY_OPTIONS, default=LOW)
     notes = models.TextField(blank=True, null=True)
