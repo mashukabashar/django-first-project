@@ -14,7 +14,7 @@ def notify_employees_on_task_creation(sender, instance, action, **kwargs):
         send_mail(
             "New Task Assigned",
             f"You have been assigned to the task: {instance.title}",
-            "slashupdates@gmail.com",
+            "diyamoni422@gmail.com",
             assigned_emails,
             fail_silently=False,
         )

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from tasks.forms import TaskModelForm, TaskDetailModelForm
-from tasks.models import Employee, Task, TaskDetail, Project
+from tasks.models import Task, TaskDetail, Project
 from datetime import date
 from django.db.models import Q, Count, Max, Min, Avg
 from django.contrib import messages
@@ -13,7 +13,7 @@ def is_manager(user):
 
 
 def is_employee(user):
-    return user.groups.filter(name='Manager').exists()
+    return user.groups.filter(name='Employee').exists()
 
 
 @user_passes_test(is_manager, login_url='no-permission')
@@ -52,18 +52,6 @@ def manager_dashboard(request):
 def employee_dashboard(request):
     return render(request, "dashboard/user-dashboard.html")
 
-
-def test(request):
-    names = ["Mahmud", "Ahamed", "John", "Mr. X"]
-    count = 0
-    for name in names:
-        count += 1
-    context = {
-        "names": names,
-        "age": 23,
-        "count": count
-    }
-    return render(request, 'test.html', context)
 
 @login_required
 @permission_required("tasks.add_task", login_url='no-permission')
